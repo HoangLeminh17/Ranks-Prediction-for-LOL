@@ -1,7 +1,7 @@
 # Guess_the_rank
 1. Please note that the prediction is given by using linear regression
 
-2. The reason why we guess the rank is sometimes, their rank does not reflect their true ability. (maybe smurfing ? ) or we just do it for fun :)
+2. The reason why we guess the rank is sometimes, their rank does not reflect their true ability. (maybe smurfing - when skilled players tend to wreck the noobs )
 
 3. The file data.csv is compiled from the files within Processed_Final_Data and also, it was added the label of rankings as integers. (The code for this step is missing :( )
 
