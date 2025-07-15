@@ -7,7 +7,7 @@
 
 3. The file data.csv is compiled from the files within Processed_Final_Data and also, it was added the label of rankings as integers. (The code for this step is missing :( )
 
-- For example, the lowest rank is Iron which was encoded to 0, Silver to 1, ..., Challenger to 8
+- For example, the lowest rank is Iron which was encoded to 0, Silver to 1, ..., Challenger as the highest to 8
 <div align="center">
   
 ![image](https://github.com/user-attachments/assets/25bc5fff-52f0-4dc1-a6a8-04713988dcac)
@@ -22,3 +22,5 @@
 5. If you want to truly see the result, i recommend you to or convert it back to strings from these numbers (you can use floor function) or use this number to guess the rank range they are in
 
 - For example, the point of them is 0.5 => They can be between Iron and Bronze
+- Of course, you can think about rounding the numbers of the output, but it can cost some accuracy.
+- For example: 0.94 is rounded to 0.9 as Iron while 0.95 can be considered as 1 - Silver
