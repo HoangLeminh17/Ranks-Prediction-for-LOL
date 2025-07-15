@@ -1,5 +1,7 @@
 # Guess_the_rank
-1. Please note that the prediction is given by using linear regression
+0. The data is taken from the website of Riot Games. You can find and pull it from here: https://developer.riotgames.com/apis
+   
+1. Please note that the prediction is given by using linear regression and ridge regression
 
 2. The reason why we guess the rank is sometimes, their rank does not reflect their true ability. (maybe smurfing - when skilled players tend to wreck the noobs )
 
