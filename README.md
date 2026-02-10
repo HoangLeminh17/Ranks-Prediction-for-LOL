@@ -82,7 +82,11 @@ $$y = \theta_0 + \sum_{i=1}^{n} \theta_i x_i + \sum_{i=1}^{n} \sum_{j=i}^{n} \th
 ### 📜 License
 Distributed under the MIT License. See `LICENSE` for more information.
 
-### ✉️ Contact
-Hoang - [@HoangLeminh17](https://github.com/HoangLeminh17) - phamhaihau1976@gmail.com
+## 👥 Contributors
+
+* **Hoang Le Minh** ([@HoangLeminh17](https://github.com/HoangLeminh17)) - Demo streamlit, improve model for Version 2.0, Crawling and processing data for Version 1.0
+* **Ngọc Bảo** ([@ngocbaoo](https://github.com/ngocbaoo)) - Data Processing, Crawling data for Version 1.0
+* **Nguyễn Đức Hoàng Phúc** ([@Nguyễn Đức Hoàng Phúc](https://github.com/somene112)) - Develop model for Version 1.0
+* **Vũ Hải Đăng** ([@Vũ Hải Đăng](https://github.com/vudang142)) - Develop model for Version 1.0
 
 Project Link: [https://github.com/HoangLeminh17/Ranks-Prediction-for-LOL](https://github.com/HoangLeminh17/Ranks-Prediction-for-LOL)
