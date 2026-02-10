@@ -3,7 +3,7 @@
 An AI-powered rank prediction system using **Multivariate Polynomial Regression** with advanced game-logic validation and an interactive dashboard.
 
 <p align="center">
-  <img src="images/demo.png" width="600">
+  <img src="images/demo.gif" width="600">
 </p>
 
 
