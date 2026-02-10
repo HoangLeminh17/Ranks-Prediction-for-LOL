@@ -1,26 +1,52 @@
-# Guess_the_rank
-0. The data is taken from the website of Riot Games. You can find and pull it from here: https://developer.riotgames.com/apis
-   
-1. Please note that the prediction is given by using linear regression and ridge regression
+# 🎮 League of Legends Rank Prediction (v2.0)
 
-2. The reason why we guess the rank is sometimes, their rank does not reflect their true ability. (maybe smurfing - when skilled players tend to wreck the noobs )
+An AI-powered rank prediction system using **Multivariate Polynomial Regression** with advanced game-logic validation and an interactive dashboard.
 
-3. The file data.csv is compiled from the files within Processed_Final_Data and also, it was added the label of rankings as integers. (The code for this step is missing :( )
 
-- For example, the lowest rank is Iron which was encoded to 0, Silver to 1, ..., Challenger as the highest to 8
-<div align="center">
-  
-![image](https://github.com/user-attachments/assets/25bc5fff-52f0-4dc1-a6a8-04713988dcac)
 
-![image](https://github.com/user-attachments/assets/77bba1b0-3014-4e9c-87cb-2f87e733c698)
+## What's New in v2.0?
 
-![image](https://github.com/user-attachments/assets/98bb8118-9f0c-432d-967b-f6593b5a4ea0)
-</div>
+In this version, we moved beyond pure mathematics to incorporate **Domain Knowledge** (League of Legends mechanics) to solve the "illogical input" problem.
 
-4. Since this is a group project and we just don't have too much time, the result may dissapoint you guys a bit (final results are just real positive numbers) .
+### Key Improvements:
+* **Smart Gold Correction (Heuristic):** Prevents impossible scenarios (e.g., 15 kills with only 2000 gold) by calculating a "Minimum Realistic Gold" threshold based on passive income, kills, and minions.
+* **Feature Clipping:** Utilizes $X_{min}$ and $X_{max}$ from the training set to prevent **unstable extrapolation** when users input extreme values.
+* **Death Penalty Logic:** Implements a post-processing penalty for high death counts (>12 deaths) to accurately reflect the impact of "feeding" on player rank.
+* **Interactive UI:** A fully functional dashboard built with **Streamlit** for real-time rank estimation.
 
-5. If you want to truly see the result, i recommend you to or convert it back to strings from these numbers (you can use floor function) or use this number to guess the rank range they are in
+---
 
-- For example, the point of them is 0.5 => They can be between Iron and Bronze
-- Of course, you can think about rounding the numbers of the output, but it can cost some accuracy.
-- For example: 0.94 is rounded to 0.9 as Iron while 0.95 can be considered as 1 - Silver
+## Project Structure
+
+```text
+Ranks-Prediction-for-LOL/
+├── Source_code/
+│   ├── app.py              # Streamlit Web Application
+│   ├── model_logic.py      # Core prediction & logic functions
+│   └── weights/            # Saved theta, x_min, x_max (.npy files)
+├── Data/                   # Aggregated dataset from Processed_Final_Data
+├── README.md               # Documentation
+└── requirements.txt        # Python dependencies
+
+### Installation & Usage
+`git clone [https://github.com/your-username/Ranks-Prediction-for-LOL.git](https://github.com/your-username/Ranks-Prediction-for-LOL.git)
+cd Ranks-Prediction-for-LOL/Source_code`
+
+### 2. Install Dependencies
+`pip install -r ../requirements.txt`
+
+### 3. Run the Demo
+`streamlit run app.py`
+
+### Methodology
+The model uses a 2nd-degree Polynomial Design Matrix to capture the non-linear relationship between player stats:$$y = \theta_0 + \sum \theta_i x_i + \sum \theta_{ij} x_i x_j$$Inputs: Kills, Deaths, Assists, Total Gold, Minions (CS).Output: Continuous Rank Score [0.0 - 8.0] (Iron to Challenger).
+
+### Technical Highlights
+Feature,Description
+Input Validation,Heuristic formula: Goldmin​=(K×250)+(A×100)+(M×18)+3000
+Optimization,Gradient Descent on a Quadratic Feature Space.
+Stability,np.clip based on training distribution to handle outliers.
+UX,"Progress bar visualization for ""Road to next Rank""."
+
+📝 Author
+Hoang - Initial work & v2.0 Logic - @HoangLeminh17

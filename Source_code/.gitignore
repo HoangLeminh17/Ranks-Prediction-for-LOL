@@ -1,0 +1,10 @@
+### Các file bị ẩn mờ đi - có màu xám
+# Ẩn file config
+config.py
+
+# Ẩn file __pycache__
+__pycache__/
+*.pyc
+
+# Ẩn các file tạm, thư mục checkpoint từ các file Jupyter notebook
+.ipynb_checkpoints/
