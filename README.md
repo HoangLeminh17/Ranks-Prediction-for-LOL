@@ -2,6 +2,9 @@
 
 An AI-powered rank prediction system using **Multivariate Polynomial Regression** with advanced game-logic validation and an interactive dashboard.
 
+<p align="center">
+  <img src="images/demo.png" width="600">
+</p>
 
 
 ## What's New in v2.0?
@@ -20,33 +23,66 @@ In this version, we moved beyond pure mathematics to incorporate **Domain Knowle
 
 ```text
 Ranks-Prediction-for-LOL/
+├── Processed_Final_Data/      # Individual processed text files for each rank
+├── Raw_Ranks_data/           # Original raw data crawled via Riot API
 ├── Source_code/
-│   ├── app.py              # Streamlit Web Application
-│   ├── model_logic.py      # Core prediction & logic functions
-│   └── weights/            # Saved theta, x_min, x_max (.npy files)
-├── Data/                   # Aggregated dataset from Processed_Final_Data
-├── README.md               # Documentation
-└── requirements.txt        # Python dependencies
+│   ├── config.py             # Configuration and constants
+│   ├── retrieve_data_step1.ipynb        # Data crawling script (Step 1)
+│   ├── retrieve_process_data_step2.ipynb # Data cleaning script (Step 2)
+│   ├── computer_project_step3.ipynb     # Model training & analysis logic (Step 3)
+│   ├── app.py                # Main Streamlit web application (Step 4)
+│   ├── model.npy             # Trained model weights (Theta)
+│   ├── data_min.npy          # Feature minimums for clipping/scaling
+│   ├── data_max.npy          # Feature maximums for clipping/scaling
+│   └── .gitignore            
+├── data.csv                  # Aggregated dataset from folder Processed_Final_Data
+├── LICENSE                   # Project license (MIT)
+├── README.md                 # Project documentation
+├── requirements.txt          # Python dependencies
+└── Slide_MAI_Computing_...   # Project presentation slide (PDF - VNM)
+```
 
 ### Installation & Usage
-`git clone [https://github.com/your-username/Ranks-Prediction-for-LOL.git](https://github.com/your-username/Ranks-Prediction-for-LOL.git)
-cd Ranks-Prediction-for-LOL/Source_code`
+```text
+git clone https://github.com/HoangLeminh17/Ranks-Prediction-for-LOL.git
+cd Ranks-Prediction-for-LOL/Source_code
+```
 
 ### 2. Install Dependencies
-`pip install -r ../requirements.txt`
+```text
+pip install -r ../requirements.txt
+```
 
 ### 3. Run the Demo
-`streamlit run app.py`
+```text
+streamlit run app.py
+```
 
-### Methodology
-The model uses a 2nd-degree Polynomial Design Matrix to capture the non-linear relationship between player stats:$$y = \theta_0 + \sum \theta_i x_i + \sum \theta_{ij} x_i x_j$$Inputs: Kills, Deaths, Assists, Total Gold, Minions (CS).Output: Continuous Rank Score [0.0 - 8.0] (Iron to Challenger).
+### 📈 Methodology
+The model utilizes a **2nd-degree Polynomial Design Matrix** to capture non-linear relationships between player statistics:
 
-### Technical Highlights
-Feature,Description
-Input Validation,Heuristic formula: Goldmin​=(K×250)+(A×100)+(M×18)+3000
-Optimization,Gradient Descent on a Quadratic Feature Space.
-Stability,np.clip based on training distribution to handle outliers.
-UX,"Progress bar visualization for ""Road to next Rank""."
+$$y = \theta_0 + \sum_{i=1}^{n} \theta_i x_i + \sum_{i=1}^{n} \sum_{j=i}^{n} \theta_{ij} x_i x_j$$
 
-📝 Author
-Hoang - Initial work & v2.0 Logic - @HoangLeminh17
+* **Inputs:** Kills, Deaths, Assists, Total Gold, Minions (CS).
+* **Output:** Continuous Rank Score $[0.0 - 8.0]$ (Iron to Challenger).
+
+---
+
+### 🛠 Technical Highlights
+
+| Feature | Description |
+| :--- | :--- |
+| **Input Validation** | Heuristic: $Gold_{min} = (K \times 250) + (A \times 100) + (M \times 18) + 3000$ |
+| **Optimization** | Gradient Descent on a Quadratic Feature Space. |
+| **Stability** | `np.clip` based on training distribution to handle outliers. |
+| **UX** | Progress bar visualization for "Road to next Rank". |
+
+---
+
+### 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+### ✉️ Contact
+Hoang - [@HoangLeminh17](https://github.com/HoangLeminh17) - phamhaihau1976@gmail.com
+
+Project Link: [https://github.com/HoangLeminh17/Ranks-Prediction-for-LOL](https://github.com/HoangLeminh17/Ranks-Prediction-for-LOL)
