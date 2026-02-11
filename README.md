@@ -47,10 +47,15 @@ Ranks-Prediction-for-LOL/
 git clone https://github.com/HoangLeminh17/Ranks-Prediction-for-LOL.git
 cd Ranks-Prediction-for-LOL/Source_code
 ```
+### 1. Create virtual environment
+```text
+conda create -n rank-prediction-LOL python=3.10
+conda activate rank-prediction-LOL
+```
 
 ### 2. Install Dependencies
 ```text
-pip install -r ../requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 3. Run the Demo
