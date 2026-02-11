@@ -1,6 +1,6 @@
-# 🎮 League of Legends Rank Prediction (v2.0)
+# League of Legends Rank Prediction (v2.0)
 
-An AI-powered rank prediction system using **Multivariate Polynomial Regression** with advanced game-logic validation and an interactive dashboard for game **League of Legends** (version 2024)
+An AI-powered rank prediction system using **Multivariate Polynomial Regression** with game-logic validation and an interactive dashboard for game **League of Legends** (version 2024). Inheriting the idea of the base (**v1.0**), the model does not use libraries as much as possible.
 
 <p align="center">
   <img src="images/demo.gif" width="600">
@@ -9,7 +9,7 @@ An AI-powered rank prediction system using **Multivariate Polynomial Regression*
 
 ## What's New in v2.0?
 
-In this version, we moved beyond pure mathematics to incorporate **Domain Knowledge** (League of Legends mechanics) to solve the "illogical input" problem.
+In this version, I solve  data leakage and use **LOL mechanic** to solve the illogical input
 
 ### Key Improvements:
 * **Smart Gold Correction (Heuristic):** Prevents impossible scenarios (e.g., 15 kills with only 2000 gold) by calculating a "Minimum Realistic Gold" threshold based on passive income, kills, and minions.
@@ -89,8 +89,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👥 Contributors
 
-* **Hoang Le Minh** ([@HoangLeminh17](https://github.com/HoangLeminh17)) - Demo streamlit, improve model for Version 2.0, Crawling and processing data for Version 1.0
-* **Ngọc Bảo** ([@ngocbaoo](https://github.com/ngocbaoo)) - Data Processing, Crawling data for Version 1.0
+* **Hoang Le Minh** ([@HoangLeminh17](https://github.com/HoangLeminh17)) - Demo streamlit, improve model for Version 2.0, crawling and processing data for Version 1.0
+* **Ngọc Bảo** ([@ngocbaoo](https://github.com/ngocbaoo)) - Data Processing, crawling data for Version 1.0
 * **Nguyễn Đức Hoàng Phúc** ([@Nguyễn Đức Hoàng Phúc](https://github.com/somene112)) - Develop model for Version 1.0
 * **Vũ Hải Đăng** ([@Vũ Hải Đăng](https://github.com/vudang142)) - Develop model for Version 1.0
 
