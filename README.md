@@ -1,6 +1,6 @@
 # 🎮 League of Legends Rank Prediction (v2.0)
 
-An AI-powered rank prediction system using **Multivariate Polynomial Regression** with advanced game-logic validation and an interactive dashboard.
+An AI-powered rank prediction system using **Multivariate Polynomial Regression** with advanced game-logic validation and an interactive dashboard for game **League of Legends** (version 2024)
 
 <p align="center">
   <img src="images/demo.gif" width="600">
